@@ -1,0 +1,7 @@
+# Downloaded annual reports and the embeddings cache — machine-local, never committed.
+_local/
+
+# API key.
+.env
+
+__pycache__/

@@ -1,0 +1,18 @@
+# Case Study 2 live demo — what the app needs, and nothing else.
+#
+#     pip install -r requirements.txt
+#
+# Pinned exactly, following the repository's rule. Every pin except streamlit equals the one
+# in the repository's root requirements.txt, so this file can also be installed on top of it.
+# Tested on Python 3.13 on 2026-09-22.
+
+streamlit==1.56.0
+openai==3.14.0
+pydantic==2.13.5
+numpy==2.1.3
+tiktoken==0.14.0
+python-dotenv==1.2.3
+
+# PyMuPDF is licensed under AGPL-3.0. It is used unmodified as an installed dependency for
+# reading PDFs; no PyMuPDF code is redistributed in this repository.
+pymupdf==1.28.2

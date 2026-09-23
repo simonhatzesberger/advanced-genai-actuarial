@@ -1,0 +1,5 @@
+image (SYNTHETIC),prompt,model,prediction,location,tokens in,cost (USD)
+with the dent,classification,GPT-4o fine-tuned,dent,,482,0.0019
+with the dent,with location,GPT-4o fine-tuned,dent,rear door,622,0.0025
+undamaged original,classification,GPT-4o fine-tuned,dent,,482,0.0019
+undamaged original,with location,GPT-4o fine-tuned,dent,,622,0.00248

@@ -1,0 +1,23 @@
+{
+  "model": "gpt-6-luna",
+  "reasoning_effort": "none",
+  "temperature": 0,
+  "extraction_date_utc": "2026-09-22",
+  "fingerprint": "53e18cdc08027ee9ee2db5299dba4cba42d4b8e08b126b15beb83c1b79f98903",
+  "claims": 3000,
+  "calls": 2420,
+  "failed": 0,
+  "retries": 0,
+  "input_tokens": 3185963,
+  "cached_tokens": 3141905,
+  "output_tokens": 92860,
+  "cost_usd": 0.082255,
+  "cost_usd_no_cache": 0.365026,
+  "wall_seconds": 196.4,
+  "parallel_requests": 16,
+  "prices_usd_per_mtok": [
+    0.1,
+    0.01,
+    0.5
+  ]
+}

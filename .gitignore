@@ -1,0 +1,63 @@
+# =====================================================================
+# .gitignore — Python + Jupyter + GenAI seminar material
+# =====================================================================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# ---------- Virtual environments ----------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+.jupyter/
+profile_default/
+ipython_config.py
+
+# ---------- Secrets and API keys ----------
+# Never commit credentials. The seminar key is handed out in the room, is spend-capped,
+# and is revoked when the seminar ends.
+.env
+.env.*
+*.env
+!.env.example
+secrets.json
+credentials.json
+*.key
+*.pem
+
+# ---------- Operating system ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- Editors and IDEs ----------
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---------- Local scratch ----------
+# Genuinely local, machine-specific artefacts.
+scratch/
+tmp/
+*.log
+
+# ---------- Machine-local downloads and caches ----------
+# Annual reports, datasets and embedding caches that a notebook or app fetches or builds on its
+# first run. They live in a _local/ folder next to it and are never redistributed through this repository.
+_local/

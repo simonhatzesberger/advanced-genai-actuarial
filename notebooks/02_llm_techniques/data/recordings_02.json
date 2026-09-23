@@ -1,0 +1,376 @@
+{
+ "meta": {
+  "notebook": "02_llm_techniques",
+  "what": "the model's replies in the saved run of sections 2 and 3, keyed by a fingerprint of the request (sha256 of the model, instructions, input, tools and schema); replayed when no key is visible",
+  "model": "gpt-5.4-nano-2026-03-17",
+  "recorded_on": "23 September 2026",
+  "recorded_utc": "2026-09-23T14:02:06Z",
+  "openai_python": "3.14.0",
+  "python": "3.13.15",
+  "calls": 19,
+  "input_tokens": 29720,
+  "cached_tokens": 17920,
+  "output_tokens": 7076,
+  "cost_usd": 0.011563,
+  "prices_usd_per_mtok": {
+   "input": 0.2,
+   "cached_input": 0.02,
+   "output": 1.25,
+   "as_of": "15 September 2026"
+  }
+ },
+ "replies": {
+  "f36e3ffb1eaab7502f0bc9cabad75f3d9ea937edd7fca0e08cf6a1bbd1d98e6f": {
+   "purpose": "stage 1: free text",
+   "output_text": "- **Driver:** Ryan Craig  \n- **Vehicle:** 2010 Acura RDX (Serial: UE4SMUNYHL50SETQ0)  \n- **Annual premium:** **1047$ (excluding tax)**  \n- **Contract period:** **2022-12-25 to 2023-12-25 (12:01 A.M. local time, exclusively)**",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "- **Driver:** Ryan Craig  \n- **Vehicle:** 2010 Acura RDX (Serial: UE4SMUNYHL50SETQ0)  \n- **Annual premium:** **1047$ (excluding tax)**  \n- **Contract period:** **2022-12-25 to 2023-12-25 (12:01 A.M. local time, exclusively)**"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 1227,
+    "cached_tokens": 0,
+    "output_tokens": 82
+   }
+  },
+  "a97de405a19dd2b855c9251d3693763ed978f4c56330e7c268b56727fd08f13f": {
+   "purpose": "stage 2: flat schema",
+   "output_text": "{\"policy_number\":\"382787-001\",\"driver_name\":\"Ryan Craig\",\"driver_birth_date\":\"1984-07-27\",\"vehicle\":\"Acura RDX 2010\",\"period_start\":\"2022-12-25\",\"period_end\":\"2023-12-25\",\"annual_premium_cad\":1047,\"tax_cad\":94.23,\"claims_last_5_years\":0}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"382787-001\",\"driver_name\":\"Ryan Craig\",\"driver_birth_date\":\"1984-07-27\",\"vehicle\":\"Acura RDX 2010\",\"period_start\":\"2022-12-25\",\"period_end\":\"2023-12-25\",\"annual_premium_cad\":1047,\"tax_cad\":94.23,\"claims_last_5_years\":0}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 1419,
+    "cached_tokens": 0,
+    "output_tokens": 90
+   }
+  },
+  "c28b43bf6fbdfb9194a0f473386564eb88b9f1462186eee468e299495229174e": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\n  \"policy_number\": \"382787-001\",\n  \"quebec_form\": true,\n  \"province\": \"NL\",\n  \"period_start\": \"2022-12-25\",\n  \"period_end\": \"2023-12-25\",\n  \"driver\": {\n    \"name\": \"Ryan Craig\",\n    \"birth_date\": \"1984-07-27\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 0\n  },\n  \"vehicle\": {\n    \"make\": \"Acura\",\n    \"model\": \"RDX\",\n    \"model_year\": 2010,\n    \"serial_number\": \"UE4SMUNYHL50SETQ0\",\n    \"acquisition\": \"purchased_used\",\n    \"interest_holder\": \"National Bank of Canada 366 Lee Canyon South Richardton, BC E8G 8M6\"\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 1000000,\n      \"deductible_cad\": null,\n      \"premium_cad\": 407\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 1000,\n      \"premium_cad\": 380\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 202\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_perils_except_collision\",\n  \"endorsements\": [\n    {\n      \"code\": \"23a\",\n      \"title\": \"Vehicles under financing\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"33\",\n      \"title\": \"Insurance for roadside assistance expenses\",\n      \"limit_cad\": null,\n      \"premium_cad\": 47\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": 11\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"Pre-authorized payment method\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 1047,\n  \"tax_cad\": 94.22999999999999\n}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\n  \"policy_number\": \"382787-001\",\n  \"quebec_form\": true,\n  \"province\": \"NL\",\n  \"period_start\": \"2022-12-25\",\n  \"period_end\": \"2023-12-25\",\n  \"driver\": {\n    \"name\": \"Ryan Craig\",\n    \"birth_date\": \"1984-07-27\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 0\n  },\n  \"vehicle\": {\n    \"make\": \"Acura\",\n    \"model\": \"RDX\",\n    \"model_year\": 2010,\n    \"serial_number\": \"UE4SMUNYHL50SETQ0\",\n    \"acquisition\": \"purchased_used\",\n    \"interest_holder\": \"National Bank of Canada 366 Lee Canyon South Richardton, BC E8G 8M6\"\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 1000000,\n      \"deductible_cad\": null,\n      \"premium_cad\": 407\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 1000,\n      \"premium_cad\": 380\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 202\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_perils_except_collision\",\n  \"endorsements\": [\n    {\n      \"code\": \"23a\",\n      \"title\": \"Vehicles under financing\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"33\",\n      \"title\": \"Insurance for roadside assistance expenses\",\n      \"limit_cad\": null,\n      \"premium_cad\": 47\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": 11\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"Pre-authorized payment method\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 1047,\n  \"tax_cad\": 94.22999999999999\n}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2452,
+    "cached_tokens": 1792,
+    "output_tokens": 749
+   }
+  },
+  "ef02a1bbd58379757a59b2f1b33a605749692172f2f4cfe96b1608eff24bad98": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\"policy_number\":\"476236-001\",\"quebec_form\":true,\"province\":\"BC\",\"period_start\":\"2022-06-14\",\"period_end\":\"2023-06-14\",\"driver\":{\"name\":\"Kevin Parrish\",\"birth_date\":\"2006-10-06\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Genesis\",\"model\":\"G90\",\"model_year\":2017,\"serial_number\":\"2VE67Z0LOY6NCTXGQ\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":407},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":380},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":380},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":202},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":60,\"premium_cad\":46},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"Choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":1035,\"tax_cad\":93.14999999999999}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"476236-001\",\"quebec_form\":true,\"province\":\"BC\",\"period_start\":\"2022-06-14\",\"period_end\":\"2023-06-14\",\"driver\":{\"name\":\"Kevin Parrish\",\"birth_date\":\"2006-10-06\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Genesis\",\"model\":\"G90\",\"model_year\":2017,\"serial_number\":\"2VE67Z0LOY6NCTXGQ\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":407},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":380},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":380},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":202},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":60,\"premium_cad\":46},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"Choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":1035,\"tax_cad\":93.14999999999999}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2243,
+    "cached_tokens": 1792,
+    "output_tokens": 407
+   }
+  },
+  "0aea64b1adcc635151f34cb2c9c0cfd07541e90e125ebded49de2ec4c98419f9": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\"policy_number\":\"518406-001\",\"quebec_form\":true,\"province\":\"NB\",\"period_start\":\"2022-11-29\",\"period_end\":\"2023-11-29\",\"driver\":{\"name\":\"Janice Garner\",\"birth_date\":\"1940-07-11\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Subaru\",\"model\":\"Outback\",\"model_year\":2001,\"serial_number\":\"IM7CCHXBLR77LFFGU\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":351},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":328},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":173},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"20a\",\"title\":\"Travel Expense (Extended Form) (Chapter B)\",\"limit_cad\":1500,\"premium_cad\":49},{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":750},{\"code\":\"34\",\"title\":\"Accident benefits insurance: 10%\",\"limit_cad\":null,\"premium_cad\":null},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":911,\"tax_cad\":81.99}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"518406-001\",\"quebec_form\":true,\"province\":\"NB\",\"period_start\":\"2022-11-29\",\"period_end\":\"2023-11-29\",\"driver\":{\"name\":\"Janice Garner\",\"birth_date\":\"1940-07-11\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Subaru\",\"model\":\"Outback\",\"model_year\":2001,\"serial_number\":\"IM7CCHXBLR77LFFGU\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":351},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":328},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":173},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"20a\",\"title\":\"Travel Expense (Extended Form) (Chapter B)\",\"limit_cad\":1500,\"premium_cad\":49},{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":750},{\"code\":\"34\",\"title\":\"Accident benefits insurance: 10%\",\"limit_cad\":null,\"premium_cad\":null},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":911,\"tax_cad\":81.99}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2258,
+    "cached_tokens": 1792,
+    "output_tokens": 485
+   }
+  },
+  "c1844dab60150c52cf9c04aaab506a0e8db9c1da4b23155097103599c2d37a49": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\"policy_number\":\"472231-001\",\"quebec_form\":true,\"province\":\"SK\",\"period_start\":\"2022-09-10\",\"period_end\":\"2023-09-10\",\"driver\":{\"name\":\"Bryan Clark\",\"birth_date\":\"1962-02-27\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":1},\"vehicle\":{\"make\":\"Mercedes-Benz\",\"model\":\"M-Class\",\"model_year\":2003,\"serial_number\":\"RC278A9XFQQ8PKE8J\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":440},{\"section\":\"B1\",\"included\":false,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":false,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":218},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"specified_perils\",\"endorsements\":[{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":null},{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":null,\"premium_cad\":51},{\"code\":\"34\",\"title\":\"Accident benefits insurance: 12$\",\"limit_cad\":null,\"premium_cad\":12},{\"code\":\"41\",\"title\":\"FIDELITY program - Change to deductibles (Section B): Included\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":721,\"tax_cad\":64.89}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"472231-001\",\"quebec_form\":true,\"province\":\"SK\",\"period_start\":\"2022-09-10\",\"period_end\":\"2023-09-10\",\"driver\":{\"name\":\"Bryan Clark\",\"birth_date\":\"1962-02-27\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":1},\"vehicle\":{\"make\":\"Mercedes-Benz\",\"model\":\"M-Class\",\"model_year\":2003,\"serial_number\":\"RC278A9XFQQ8PKE8J\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":440},{\"section\":\"B1\",\"included\":false,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":false,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":218},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"specified_perils\",\"endorsements\":[{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":null},{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":null,\"premium_cad\":51},{\"code\":\"34\",\"title\":\"Accident benefits insurance: 12$\",\"limit_cad\":null,\"premium_cad\":12},{\"code\":\"41\",\"title\":\"FIDELITY program - Change to deductibles (Section B): Included\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":721,\"tax_cad\":64.89}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2369,
+    "cached_tokens": 1792,
+    "output_tokens": 483
+   }
+  },
+  "7483b35e8f0040399faee97a5b7b61f2bd17761b6809a02d3accd2d05669df7f": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\"policy_number\":\"106344-001\",\"quebec_form\":true,\"province\":\"ON\",\"period_start\":\"2022-02-18\",\"period_end\":\"2023-02-18\",\"driver\":{\"name\":\"Elizabeth Williams\",\"birth_date\":\"1955-05-09\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Mercedes-Benz\",\"model\":\"GLS\",\"model_year\":2020,\"serial_number\":\"6F6IK7A4U07IBI8DV\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":351},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":327},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":174},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":null},{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":null,\"premium_cad\":39},{\"code\":\"34\",\"title\":\"Accident benefits insurance\",\"limit_cad\":null,\"premium_cad\":10},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"Pre-authorized payment\",\"percent\":2}],\"annual_premium_cad\":901,\"tax_cad\":81.09}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"106344-001\",\"quebec_form\":true,\"province\":\"ON\",\"period_start\":\"2022-02-18\",\"period_end\":\"2023-02-18\",\"driver\":{\"name\":\"Elizabeth Williams\",\"birth_date\":\"1955-05-09\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Mercedes-Benz\",\"model\":\"GLS\",\"model_year\":2020,\"serial_number\":\"6F6IK7A4U07IBI8DV\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":351},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":327},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":174},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":null},{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":null,\"premium_cad\":39},{\"code\":\"34\",\"title\":\"Accident benefits insurance\",\"limit_cad\":null,\"premium_cad\":10},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"Pre-authorized payment\",\"percent\":2}],\"annual_premium_cad\":901,\"tax_cad\":81.09}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2382,
+    "cached_tokens": 1792,
+    "output_tokens": 468
+   }
+  },
+  "5af921ead23d46f32b262055a668d2ccf283092519c17118744037cdb2cd507c": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\n  \"policy_number\": \"221325-001\",\n  \"quebec_form\": true,\n  \"province\": \"MB\",\n  \"period_start\": \"2022-04-23\",\n  \"period_end\": \"2023-04-23\",\n  \"driver\": {\n    \"name\": \"Felicia Weber\",\n    \"birth_date\": \"1964-12-30\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 0\n  },\n  \"vehicle\": {\n    \"make\": \"Chevrolet\",\n    \"model\": \"Silverado 2500 Extended Cab\",\n    \"model_year\": 2003,\n    \"serial_number\": \"X3R3S7GWLIU9U15YI\",\n    \"acquisition\": \"leased_used\",\n    \"interest_holder\": \"TD Canada Trust Bank 190 Johnson Hollow\"\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 1000000,\n      \"deductible_cad\": null,\n      \"premium_cad\": 350\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 328\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 174\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_risks\",\n  \"endorsements\": [\n    {\n      \"code\": \"5a\",\n      \"title\": \"Vehicles leased or under a contract of leasing\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"20a\",\n      \"title\": \"Travel Expense (Extended Form) (Chapter B)\",\n      \"limit_cad\": 1500,\n      \"premium_cad\": 50\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"33\",\n      \"title\": \"Insurance for roadside assistance expenses\",\n      \"limit_cad\": 400,\n      \"premium_cad\": 40\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": 10\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Fidelity program - Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"Pre-authorized payment\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 952,\n  \"tax_cad\": 85.67999999999999\n}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\n  \"policy_number\": \"221325-001\",\n  \"quebec_form\": true,\n  \"province\": \"MB\",\n  \"period_start\": \"2022-04-23\",\n  \"period_end\": \"2023-04-23\",\n  \"driver\": {\n    \"name\": \"Felicia Weber\",\n    \"birth_date\": \"1964-12-30\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 0\n  },\n  \"vehicle\": {\n    \"make\": \"Chevrolet\",\n    \"model\": \"Silverado 2500 Extended Cab\",\n    \"model_year\": 2003,\n    \"serial_number\": \"X3R3S7GWLIU9U15YI\",\n    \"acquisition\": \"leased_used\",\n    \"interest_holder\": \"TD Canada Trust Bank 190 Johnson Hollow\"\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 1000000,\n      \"deductible_cad\": null,\n      \"premium_cad\": 350\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 328\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 174\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_risks\",\n  \"endorsements\": [\n    {\n      \"code\": \"5a\",\n      \"title\": \"Vehicles leased or under a contract of leasing\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"20a\",\n      \"title\": \"Travel Expense (Extended Form) (Chapter B)\",\n      \"limit_cad\": 1500,\n      \"premium_cad\": 50\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"33\",\n      \"title\": \"Insurance for roadside assistance expenses\",\n      \"limit_cad\": 400,\n      \"premium_cad\": 40\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": 10\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Fidelity program - Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"Pre-authorized payment\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 952,\n  \"tax_cad\": 85.67999999999999\n}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2513,
+    "cached_tokens": 1792,
+    "output_tokens": 798
+   }
+  },
+  "c3089a5b16035a5d561cb0546a6a6efce6bf11bd323a1bffed3759aa541fd6ea": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\"policy_number\":\"367030-001\",\"quebec_form\":true,\"province\":\"NB\",\"period_start\":\"2022-06-18\",\"period_end\":\"2023-06-18\",\"driver\":{\"name\":\"William Green\",\"birth_date\":\"1941-02-17\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Oldsmobile\",\"model\":\"98\",\"model_year\":1995,\"serial_number\":\"YCL5BZMPETMMG1DZQ\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":408},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":380},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":202},{\"section\":\"B3\",\"included\":false,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_perils_except_collision\",\"endorsements\":[{\"code\":\"20a\",\"title\":\"Travel Expense (Extended Form) (Chapter B)\",\"limit_cad\":1500,\"premium_cad\":58},{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":750},{\"code\":\"34\",\"title\":\"Accident benefits insurance:\",\"limit_cad\":13,\"premium_cad\":null},{\"code\":\"41\",\"title\":\"Fidelity program - Change to deductibles (Section B):\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"As a member/customer of an association, you are eligible for the following discount\",\"percent\":10},{\"reason\":\"2% for choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":1061,\"tax_cad\":95.49}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"367030-001\",\"quebec_form\":true,\"province\":\"NB\",\"period_start\":\"2022-06-18\",\"period_end\":\"2023-06-18\",\"driver\":{\"name\":\"William Green\",\"birth_date\":\"1941-02-17\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Oldsmobile\",\"model\":\"98\",\"model_year\":1995,\"serial_number\":\"YCL5BZMPETMMG1DZQ\",\"acquisition\":\"purchased_used\",\"interest_holder\":null},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":408},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":380},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":250,\"premium_cad\":202},{\"section\":\"B3\",\"included\":false,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_perils_except_collision\",\"endorsements\":[{\"code\":\"20a\",\"title\":\"Travel Expense (Extended Form) (Chapter B)\",\"limit_cad\":1500,\"premium_cad\":58},{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":750},{\"code\":\"34\",\"title\":\"Accident benefits insurance:\",\"limit_cad\":13,\"premium_cad\":null},{\"code\":\"41\",\"title\":\"Fidelity program - Change to deductibles (Section B):\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"As a member/customer of an association, you are eligible for the following discount\",\"percent\":10},{\"reason\":\"2% for choosing Pre-authorized payment as your premium payment method\",\"percent\":2}],\"annual_premium_cad\":1061,\"tax_cad\":95.49}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2280,
+    "cached_tokens": 1792,
+    "output_tokens": 511
+   }
+  },
+  "dc3cfb4c132ef5f4582c4cc3977ce54bb6a63c2370724ee14cbd715dc94897a0": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\n  \"policy_number\": \"498106-001\",\n  \"quebec_form\": true,\n  \"province\": \"AB\",\n  \"period_start\": \"2022-11-10\",\n  \"period_end\": \"2023-11-10\",\n  \"driver\": {\n    \"name\": \"Patrick Munoz\",\n    \"birth_date\": \"1947-08-01\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 1\n  },\n  \"vehicle\": {\n    \"make\": \"BMW\",\n    \"model\": \"X6\",\n    \"model_year\": 2017,\n    \"serial_number\": \"X1179TRG7QLIG0GSD\",\n    \"acquisition\": \"purchased_used\",\n    \"interest_holder\": null\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 2000000,\n      \"deductible_cad\": 500,\n      \"premium_cad\": null\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": 410\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 410\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 250,\n      \"premium_cad\": 218\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_perils_except_collision\",\n  \"endorsements\": [\n    {\n      \"code\": \"20a\",\n      \"title\": \"Travel Expense (Extended Form) (Chapter B)\",\n      \"limit_cad\": 1500,\n      \"premium_cad\": 63\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": 750\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Fidelity program - Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"2% for choosing Pre-authorized payment as your premium payment method\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 1204,\n  \"tax_cad\": 108.36\n}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\n  \"policy_number\": \"498106-001\",\n  \"quebec_form\": true,\n  \"province\": \"AB\",\n  \"period_start\": \"2022-11-10\",\n  \"period_end\": \"2023-11-10\",\n  \"driver\": {\n    \"name\": \"Patrick Munoz\",\n    \"birth_date\": \"1947-08-01\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 1\n  },\n  \"vehicle\": {\n    \"make\": \"BMW\",\n    \"model\": \"X6\",\n    \"model_year\": 2017,\n    \"serial_number\": \"X1179TRG7QLIG0GSD\",\n    \"acquisition\": \"purchased_used\",\n    \"interest_holder\": null\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 2000000,\n      \"deductible_cad\": 500,\n      \"premium_cad\": null\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": 410\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 410\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 250,\n      \"premium_cad\": 218\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_perils_except_collision\",\n  \"endorsements\": [\n    {\n      \"code\": \"20a\",\n      \"title\": \"Travel Expense (Extended Form) (Chapter B)\",\n      \"limit_cad\": 1500,\n      \"premium_cad\": 63\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": 750\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Fidelity program - Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"2% for choosing Pre-authorized payment as your premium payment method\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 1204,\n  \"tax_cad\": 108.36\n}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2260,
+    "cached_tokens": 1792,
+    "output_tokens": 708
+   }
+  },
+  "26429dd21358fad256ceecb9b50ef48c51dbacf77c7d13bbd0eff16d441962b5": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\"policy_number\":\"290885-001\",\"quebec_form\":true,\"province\":\"PE\",\"period_start\":\"2022-11-28\",\"period_end\":\"2023-11-28\",\"driver\":{\"name\":\"Christine Smith\",\"birth_date\":\"1971-03-19\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Ford\",\"model\":\"Club Wagon\",\"model_year\":1998,\"serial_number\":\"C9P82BV6GH36WK32T\",\"acquisition\":\"purchased_used\",\"interest_holder\":\"Scotia Bank 052 Mitchell Union\"},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":351},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":328},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":1000,\"premium_cad\":174},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"20a\",\"title\":\"Travel Expense (Extended Form) (Chapter B)\",\"limit_cad\":1500,\"premium_cad\":50},{\"code\":\"23a\",\"title\":\"Vehicles under financing\",\"limit_cad\":null,\"premium_cad\":null},{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":750},{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":null,\"premium_cad\":41},{\"code\":\"34\",\"title\":\"Accident benefits insurance\",\"limit_cad\":null,\"premium_cad\":10},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"Pre-authorized payment\",\"percent\":2}],\"annual_premium_cad\":954,\"tax_cad\":85.86}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\"policy_number\":\"290885-001\",\"quebec_form\":true,\"province\":\"PE\",\"period_start\":\"2022-11-28\",\"period_end\":\"2023-11-28\",\"driver\":{\"name\":\"Christine Smith\",\"birth_date\":\"1971-03-19\",\"licence_suspended_last_3_years\":false,\"claims_last_5_years\":0},\"vehicle\":{\"make\":\"Ford\",\"model\":\"Club Wagon\",\"model_year\":1998,\"serial_number\":\"C9P82BV6GH36WK32T\",\"acquisition\":\"purchased_used\",\"interest_holder\":\"Scotia Bank 052 Mitchell Union\"},\"coverages\":[{\"section\":\"A\",\"included\":true,\"amount_of_insurance_cad\":1000000,\"deductible_cad\":null,\"premium_cad\":351},{\"section\":\"B1\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null},{\"section\":\"B2\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":500,\"premium_cad\":328},{\"section\":\"B3\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":1000,\"premium_cad\":174},{\"section\":\"B4\",\"included\":true,\"amount_of_insurance_cad\":null,\"deductible_cad\":null,\"premium_cad\":null}],\"physical_damage_cover\":\"all_risks\",\"endorsements\":[{\"code\":\"20a\",\"title\":\"Travel Expense (Extended Form) (Chapter B)\",\"limit_cad\":1500,\"premium_cad\":50},{\"code\":\"23a\",\"title\":\"Vehicles under financing\",\"limit_cad\":null,\"premium_cad\":null},{\"code\":\"27\",\"title\":\"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\"limit_cad\":75000,\"premium_cad\":750},{\"code\":\"33\",\"title\":\"Insurance for roadside assistance expenses\",\"limit_cad\":null,\"premium_cad\":41},{\"code\":\"34\",\"title\":\"Accident benefits insurance\",\"limit_cad\":null,\"premium_cad\":10},{\"code\":\"41\",\"title\":\"Change to deductibles (Section B)\",\"limit_cad\":null,\"premium_cad\":null}],\"discounts\":[{\"reason\":\"Pre-authorized payment\",\"percent\":2}],\"annual_premium_cad\":954,\"tax_cad\":85.86}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2493,
+    "cached_tokens": 1792,
+    "output_tokens": 527
+   }
+  },
+  "5d32eab3aaa351b9d2dae05e347affae9e1b05199ddd5b4d73206b1fbe50ff64": {
+   "purpose": "stage 3: nested schema",
+   "output_text": "{\n  \"policy_number\": \"040324-001\",\n  \"quebec_form\": true,\n  \"province\": \"NS\",\n  \"period_start\": \"2022-04-10\",\n  \"period_end\": \"2023-04-10\",\n  \"driver\": {\n    \"name\": \"James Kim MD\",\n    \"birth_date\": \"1948-05-28\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 0\n  },\n  \"vehicle\": {\n    \"make\": \"Kia\",\n    \"model\": \"Spectra\",\n    \"model_year\": 2007,\n    \"serial_number\": \"72CT3L925ZJFGCAWY\",\n    \"acquisition\": \"purchased_used\",\n    \"interest_holder\": null\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 1000000,\n      \"deductible_cad\": null,\n      \"premium_cad\": 407\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": 380\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 380\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 250,\n      \"premium_cad\": 202\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_risks\",\n  \"endorsements\": [\n    {\n      \"code\": \"20a\",\n      \"title\": \"Travel Expense (Extended Form) (Chapter B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": 57\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": 750\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": 11\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Fidelity program - Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"As a member/customer of an association\",\n      \"percent\": 10\n    },\n    {\n      \"reason\": \"Pre-authorized payment\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 1057,\n  \"tax_cad\": 95.13\n}",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "{\n  \"policy_number\": \"040324-001\",\n  \"quebec_form\": true,\n  \"province\": \"NS\",\n  \"period_start\": \"2022-04-10\",\n  \"period_end\": \"2023-04-10\",\n  \"driver\": {\n    \"name\": \"James Kim MD\",\n    \"birth_date\": \"1948-05-28\",\n    \"licence_suspended_last_3_years\": false,\n    \"claims_last_5_years\": 0\n  },\n  \"vehicle\": {\n    \"make\": \"Kia\",\n    \"model\": \"Spectra\",\n    \"model_year\": 2007,\n    \"serial_number\": \"72CT3L925ZJFGCAWY\",\n    \"acquisition\": \"purchased_used\",\n    \"interest_holder\": null\n  },\n  \"coverages\": [\n    {\n      \"section\": \"A\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": 1000000,\n      \"deductible_cad\": null,\n      \"premium_cad\": 407\n    },\n    {\n      \"section\": \"B1\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": 380\n    },\n    {\n      \"section\": \"B2\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 500,\n      \"premium_cad\": 380\n    },\n    {\n      \"section\": \"B3\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": 250,\n      \"premium_cad\": 202\n    },\n    {\n      \"section\": \"B4\",\n      \"included\": true,\n      \"amount_of_insurance_cad\": null,\n      \"deductible_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"physical_damage_cover\": \"all_risks\",\n  \"endorsements\": [\n    {\n      \"code\": \"20a\",\n      \"title\": \"Travel Expense (Extended Form) (Chapter B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": 57\n    },\n    {\n      \"code\": \"27\",\n      \"title\": \"Civil liability resulting from damage caused to vehicles of which named insured is not owner (including vehicles provided by an employer) (Section A)\",\n      \"limit_cad\": 75000,\n      \"premium_cad\": 750\n    },\n    {\n      \"code\": \"34\",\n      \"title\": \"Accident benefits insurance\",\n      \"limit_cad\": null,\n      \"premium_cad\": 11\n    },\n    {\n      \"code\": \"41\",\n      \"title\": \"Fidelity program - Change to deductibles (Section B)\",\n      \"limit_cad\": null,\n      \"premium_cad\": null\n    }\n  ],\n  \"discounts\": [\n    {\n      \"reason\": \"As a member/customer of an association\",\n      \"percent\": 10\n    },\n    {\n      \"reason\": \"Pre-authorized payment\",\n      \"percent\": 2\n    }\n  ],\n  \"annual_premium_cad\": 1057,\n  \"tax_cad\": 95.13\n}"
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 2283,
+    "cached_tokens": 1792,
+    "output_tokens": 721
+   }
+  },
+  "2064678b3ff961479cb75c87c321a98eeb1d9d7da5d546f5c41f9191c1ff8b6a": {
+   "purpose": "round trip: step 1",
+   "output_text": "",
+   "output": [
+    {
+     "type": "function_call",
+     "call_id": "call_Up4pA9LPVonnMSYTCEYanZ9g",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2025\",\"sex\":\"MALE\",\"start_age\":85,\"end_age\":100}"
+    }
+   ],
+   "calls": [
+    {
+     "type": "function_call",
+     "call_id": "call_Up4pA9LPVonnMSYTCEYanZ9g",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2025\",\"sex\":\"MALE\",\"start_age\":85,\"end_age\":100}"
+    }
+   ],
+   "usage": {
+    "input_tokens": 246,
+    "cached_tokens": 0,
+    "output_tokens": 44
+   }
+  },
+  "3d028ef7c7c0fa4b1844901059efd018bdebff7ad90713054b0e5266ba56e18f": {
+   "purpose": "round trip: step 4",
+   "output_text": "| Age (x) | q_x (one-year death probability) |\n|---:|---:|\n| 85 | 0.063080 |\n| 86 | 0.073180 |\n| 87 | 0.084803 |\n| 88 | 0.098028 |\n| 89 | 0.112913 |\n| 90 | 0.129465 |\n| 91 | 0.147647 |\n| 92 | 0.167363 |\n| 93 | 0.188107 |\n| 94 | 0.209873 |\n| 95 | 0.232032 |\n| 96 | 0.243250 |\n| 97 | 0.251290 |\n| 98 | 0.258960 |\n| 99 | 0.266210 |\n| 100 | 0.273020 |\n\nFrom age 85 to 100, the one-year death probability q_x for men rises steadily throughout the entire age range. The increase is gradual at the younger part of the interval and becomes more pronounced through the early 90s, continuing upward to age 100.",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "| Age (x) | q_x (one-year death probability) |\n|---:|---:|\n| 85 | 0.063080 |\n| 86 | 0.073180 |\n| 87 | 0.084803 |\n| 88 | 0.098028 |\n| 89 | 0.112913 |\n| 90 | 0.129465 |\n| 91 | 0.147647 |\n| 92 | 0.167363 |\n| 93 | 0.188107 |\n| 94 | 0.209873 |\n| 95 | 0.232032 |\n| 96 | 0.243250 |\n| 97 | 0.251290 |\n| 98 | 0.258960 |\n| 99 | 0.266210 |\n| 100 | 0.273020 |\n\nFrom age 85 to 100, the one-year death probability q_x for men rises steadily throughout the entire age range. The increase is gradual at the younger part of the interval and becomes more pronounced through the early 90s, continuing upward to age 100."
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 583,
+    "cached_tokens": 0,
+    "output_tokens": 240
+   }
+  },
+  "acd505b8411d80ab8a85623e080367ae4543afc74539b4b1be8ecd893cd8eaa5": {
+   "purpose": "tool loop: 2022 against 2025",
+   "output_text": "",
+   "output": [
+    {
+     "type": "function_call",
+     "call_id": "call_awlMtaiPYdcCH9nX4hJRR7JW",
+     "name": "list_mortality_tables",
+     "arguments": "{}"
+    }
+   ],
+   "calls": [
+    {
+     "type": "function_call",
+     "call_id": "call_awlMtaiPYdcCH9nX4hJRR7JW",
+     "name": "list_mortality_tables",
+     "arguments": "{}"
+    }
+   ],
+   "usage": {
+    "input_tokens": 268,
+    "cached_tokens": 0,
+    "output_tokens": 17
+   }
+  },
+  "ee52c54f71137684f60d4bb4486135a80e9254081c34604160623decab88104e": {
+   "purpose": "tool loop: 2022 against 2025",
+   "output_text": "",
+   "output": [
+    {
+     "type": "function_call",
+     "call_id": "call_U3I1nSsbsCb2gZU4PD699a0x",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2022\",\"sex\":\"MALE\",\"start_age\":85,\"end_age\":100}"
+    },
+    {
+     "type": "function_call",
+     "call_id": "call_h6d1HHZS5EjGgxsw38uzsNqU",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2025\",\"sex\":\"MALE\",\"start_age\":85,\"end_age\":100}"
+    }
+   ],
+   "calls": [
+    {
+     "type": "function_call",
+     "call_id": "call_U3I1nSsbsCb2gZU4PD699a0x",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2022\",\"sex\":\"MALE\",\"start_age\":85,\"end_age\":100}"
+    },
+    {
+     "type": "function_call",
+     "call_id": "call_h6d1HHZS5EjGgxsw38uzsNqU",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2025\",\"sex\":\"MALE\",\"start_age\":85,\"end_age\":100}"
+    }
+   ],
+   "usage": {
+    "input_tokens": 635,
+    "cached_tokens": 0,
+    "output_tokens": 100
+   }
+  },
+  "da6bf3f4a3a0eb6d9785e48aed60f7f3966dfa3a233f425d9bb186aeadfce0c7": {
+   "purpose": "tool loop: 2022 against 2025",
+   "output_text": "| Age | q_x (oldest: PKV-Sterbetafel 2022) | q_x (newest: PKV-Sterbetafel 2025) | Change (%) |\n|---:|---:|---:|---:|\n| 85 | 0.065906 | 0.063080 | -4.3 |\n| 86 | 0.076309 | 0.073180 | -4.1 |\n| 87 | 0.088135 | 0.084803 | -3.8 |\n| 88 | 0.101452 | 0.098028 | -3.4 |\n| 89 | 0.116307 | 0.112913 | -2.9 |\n| 90 | 0.132707 | 0.129465 | -2.4 |\n| 91 | 0.150612 | 0.147647 | -2.0 |\n| 92 | 0.169904 | 0.167363 | -1.5 |\n| 93 | 0.190399 | 0.188107 | -1.2 |\n| 94 | 0.211354 | 0.209873 | -0.7 |\n| 95 | 0.232032 | 0.232032 | 0.0 |\n| 96 | 0.243250 | 0.243250 | 0.0 |\n| 97 | 0.251290 | 0.251290 | 0.0 |\n| 98 | 0.258960 | 0.258960 | 0.0 |\n| 99 | 0.266210 | 0.266210 | 0.0 |\n| 100 | 0.273020 | 0.273020 | 0.0 |\n\nAcross ages 85–94, the one-year death probabilities for men are lower in the newest table (2025) than in the oldest table (2022), with percentage decreases ranging from -4.3% to -0.7%. From age 95 onward (95–100), the values are identical in both tables, so the change is 0.0%. Overall, the downward shift fades as age increases and reaches zero by age 95.",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "| Age | q_x (oldest: PKV-Sterbetafel 2022) | q_x (newest: PKV-Sterbetafel 2025) | Change (%) |\n|---:|---:|---:|---:|\n| 85 | 0.065906 | 0.063080 | -4.3 |\n| 86 | 0.076309 | 0.073180 | -4.1 |\n| 87 | 0.088135 | 0.084803 | -3.8 |\n| 88 | 0.101452 | 0.098028 | -3.4 |\n| 89 | 0.116307 | 0.112913 | -2.9 |\n| 90 | 0.132707 | 0.129465 | -2.4 |\n| 91 | 0.150612 | 0.147647 | -2.0 |\n| 92 | 0.169904 | 0.167363 | -1.5 |\n| 93 | 0.190399 | 0.188107 | -1.2 |\n| 94 | 0.211354 | 0.209873 | -0.7 |\n| 95 | 0.232032 | 0.232032 | 0.0 |\n| 96 | 0.243250 | 0.243250 | 0.0 |\n| 97 | 0.251290 | 0.251290 | 0.0 |\n| 98 | 0.258960 | 0.258960 | 0.0 |\n| 99 | 0.266210 | 0.266210 | 0.0 |\n| 100 | 0.273020 | 0.273020 | 0.0 |\n\nAcross ages 85–94, the one-year death probabilities for men are lower in the newest table (2025) than in the oldest table (2022), with percentage decreases ranging from -4.3% to -0.7%. From age 95 onward (95–100), the values are identical in both tables, so the change is 0.0%. Overall, the downward shift fades as age increases and reaches zero by age 95."
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 1319,
+    "cached_tokens": 0,
+    "output_tokens": 486
+   }
+  },
+  "5f0ab6a4d97af760edd4b0a9f59703450ad48d795872a9c83231c85eb62d1e12": {
+   "purpose": "tool loop: a request refused",
+   "output_text": "",
+   "output": [
+    {
+     "type": "function_call",
+     "call_id": "call_STB2XAg9oqWWC4iNyf171fKe",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2025\",\"sex\":\"FEMALE\",\"start_age\":98,\"end_age\":105}"
+    }
+   ],
+   "calls": [
+    {
+     "type": "function_call",
+     "call_id": "call_STB2XAg9oqWWC4iNyf171fKe",
+     "name": "fetch_probabilities",
+     "arguments": "{\"mortality_table\":\"PKV-Sterbetafel 2025\",\"sex\":\"FEMALE\",\"start_age\":98,\"end_age\":105}"
+    }
+   ],
+   "usage": {
+    "input_tokens": 203,
+    "cached_tokens": 0,
+    "output_tokens": 45
+   }
+  },
+  "663d4d1b630ede8379dbe813f09ab650f0425f61eed49e0abbabe61b15e89b58": {
+   "purpose": "tool loop: a request refused",
+   "output_text": "I can’t provide q_x for ages 98 to 105 in **PKV-Sterbetafel 2025** because the table only covers up to **age 102**. The tool returned this error:\n\n> ages must satisfy 0 <= start_age <= end_age <= 102: the tables end at age 102\n\nIf you want, I can return the one-year death probabilities for **women aged 98 to 102** (q_98, q_99, q_100, q_101, q_102).",
+   "output": [
+    {
+     "role": "assistant",
+     "content": "I can’t provide q_x for ages 98 to 105 in **PKV-Sterbetafel 2025** because the table only covers up to **age 102**. The tool returned this error:\n\n> ages must satisfy 0 <= start_age <= end_age <= 102: the tables end at age 102\n\nIf you want, I can return the one-year death probabilities for **women aged 98 to 102** (q_98, q_99, q_100, q_101, q_102)."
+    }
+   ],
+   "calls": [],
+   "usage": {
+    "input_tokens": 287,
+    "cached_tokens": 0,
+    "output_tokens": 115
+   }
+  }
+ }
+}

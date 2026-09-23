@@ -1,0 +1,21 @@
+# Normalise every text file to LF, in the repository and in the working copy.
+#
+# Notebooks, manifests and recorded caches are hashed and compared byte for byte, so a
+# platform-dependent line ending would make a file that is identical in content look different
+# between a Windows clone and a Linux one. LF everywhere, on every machine.
+* text=auto eol=lf
+
+# Binary files git must never touch.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.pptx  binary
+*.xlsx  binary
+*.parquet binary
+*.zip   binary
+*.sqlite binary
+
+# Notebooks are JSON: diff them as text, but do not let git mangle them.
+*.ipynb text eol=lf

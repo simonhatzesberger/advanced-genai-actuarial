@@ -1,0 +1,106 @@
+{
+  "recorded_on": "2026-09-22",
+  "openai_python": "2.29.0",
+  "prompt": "the article's SYSTEM_PROMPT, verbatim",
+  "schema": "DamageType",
+  "detail": "low",
+  "test_photos": 300,
+  "prices_usd_per_mtok": {
+    "ft:gpt-4o-2024-08-06:personal::B5swMoBf": [
+      3.75,
+      1.875,
+      15.0
+    ],
+    "gpt-4o-2024-08-06": [
+      2.5,
+      1.25,
+      10.0
+    ],
+    "gpt-6-luna": [
+      0.1,
+      0.01,
+      0.5
+    ],
+    "gpt-5.4-mini-2026-03-17": [
+      0.75,
+      0.075,
+      4.5
+    ]
+  },
+  "prices_retrieved": "2026-09-22",
+  "models": {
+    "gpt4o_finetuned_2026": {
+      "model": "ft:gpt-4o-2024-08-06:personal::B5swMoBf",
+      "answered_by": [
+        "ft:gpt-4o-2024-08-06:personal::B5swMoBf"
+      ],
+      "temperature": 0,
+      "calls_answered": 300,
+      "calls_failed": 0,
+      "input_tokens": 144600,
+      "output_tokens": 2018,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.57252,
+      "usd_per_1000_photos": 1.9084,
+      "median_seconds": 1.43,
+      "mean_seconds": 1.552,
+      "parallel_calls": 8,
+      "sampling": "temperature=0"
+    },
+    "gpt4o_zeroshot_2026": {
+      "model": "gpt-4o-2024-08-06",
+      "answered_by": [
+        "gpt-4o-2024-08-06"
+      ],
+      "temperature": 0,
+      "calls_answered": 300,
+      "calls_failed": 0,
+      "input_tokens": 144300,
+      "output_tokens": 1975,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.3805,
+      "usd_per_1000_photos": 1.2683,
+      "median_seconds": 1.41,
+      "mean_seconds": 1.581,
+      "parallel_calls": 8,
+      "sampling": "temperature=0"
+    },
+    "gpt6_luna_2026": {
+      "model": "gpt-6-luna",
+      "answered_by": [
+        "gpt-6-luna"
+      ],
+      "temperature": "not sent at medium effort",
+      "calls_answered": 300,
+      "calls_failed": 0,
+      "input_tokens": 187800,
+      "output_tokens": 36386,
+      "reasoning_tokens": 31677,
+      "cost_usd": 0.036973,
+      "usd_per_1000_photos": 0.1232,
+      "median_seconds": 2.18,
+      "mean_seconds": 2.579,
+      "parallel_calls": 8,
+      "sampling": "the model's defaults: no temperature sent, reasoning effort medium"
+    },
+    "gpt54_mini_2026": {
+      "model": "gpt-5.4-mini-2026-03-17",
+      "answered_by": [
+        "gpt-5.4-mini-2026-03-17"
+      ],
+      "temperature": 0,
+      "calls_answered": 300,
+      "calls_failed": 0,
+      "input_tokens": 456960,
+      "output_tokens": 4177,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.361517,
+      "usd_per_1000_photos": 1.2051,
+      "median_seconds": 1.29,
+      "mean_seconds": 1.444,
+      "parallel_calls": 8,
+      "sampling": "temperature=0; reasoning effort not passed, so the model's default, none"
+    }
+  },
+  "total_cost_usd": 1.35151
+}
